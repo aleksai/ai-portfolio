@@ -1,0 +1,25 @@
+@import (reference) "colors";
+.btn {
+  font-size: 15px;
+  border: 1px solid @colorGray;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: none;
+  color: inherit;
+  font-family: inherit;
+  transition: 250ms ease;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.btn-blue {
+    border-color: @colorBlue;
+    color: @colorBlue;
+
+    &:hover {
+      background: @colorBlue;
+      color: #FFF;
+    }
+  }
+}

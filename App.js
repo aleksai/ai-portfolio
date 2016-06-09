@@ -12,8 +12,8 @@ class App extends React.Component {
     return (
       <div>
         <LeftPanel />
-        <div className="app-main">
-          <div className = "ri-content">{this.props.children}</div>
+        <div className="appMain">
+          {this.props.children}
         </div>
       </div>
     );

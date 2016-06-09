@@ -1,0 +1,41 @@
+.topNav ul {
+
+  li a {
+    display: block;
+    padding: 8px 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:active {
+      background: none;
+      text-decoration: none;
+    }
+
+    &.active {
+      color: @colorBlue;
+      position: relative;
+
+
+      &:after, &:before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        right: -21px;
+
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+
+        border-right:12px solid #FFF;
+        border-right-color: @colorGrayDark;
+        z-index: 1;
+      }
+
+      &:before {
+        right: -20px;
+        border-right-color: lighten(@colorGrayDark, 10%);
+      }
+    }
+  }
+}
