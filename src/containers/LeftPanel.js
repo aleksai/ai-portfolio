@@ -18,7 +18,7 @@ class LeftPanel extends React.Component {
           </div>
 
           <div className="connect">
-            <button className="btn btn-blue">Connect</button>
+            <button className={`btn btn-${this.props.theme}`}>Connect</button>
           </div>
 
           <ThemeSwitcher {...this.props} onChange={this.props.changeTheme} />
@@ -29,7 +29,7 @@ class LeftPanel extends React.Component {
 
 const getProps = (state) => {
   return {
-    theme: state.theme
+    theme: state.theme.name
   }
 };
 

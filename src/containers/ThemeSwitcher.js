@@ -15,10 +15,13 @@ class ThemeSwitcher extends React.Component {
   }
 
   render() {
+    const { theme } = this.props;
+    const blueClass = theme === 'blue' ? 'themeBtn blue selected' : 'themeBtn blue';
+    const redClass = theme === 'red' ? 'themeBtn red selected' : 'themeBtn red';
     return (
         <div className="themeSwitcher">
-          <span className="themeBtn dark" id="dark" onClick={this.changeTheme}></span>
-          <span className="themeBtn light" id="light" onClick={this.changeTheme}></span>
+          <span className={blueClass} id="blue" onClick={this.changeTheme}></span>
+          <span className={redClass} id="red" onClick={this.changeTheme}></span>
       </div>
     )
   }

@@ -12,6 +12,12 @@ const PROJECTS = [
     company: 'Independent',
     technology: 'Javascript, React JS, HTML/CSS',
     imageUrl: ''
+  },
+  {
+    title: 'Engagement Console',
+    company: 'Radian6',
+    technology: 'Adobe Flex, Javascript',
+    imageUrl: ''
   }
 ];
 

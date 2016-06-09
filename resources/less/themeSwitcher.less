@@ -14,17 +14,26 @@
     border-radius: 15px;
     margin: 0 5px;
     transition: 250ms ease;
+    border: 1px solid;
 
     &:hover {
       transform: scale(1.1);
     }
 
-    &.dark {
-      background: @colorBlue;
+    &.blue {
+      border-color: @colorBlue;
+
+      &.selected {
+        background: @colorBlue;
+      }
     }
 
-    &.light {
-      background: #FFF;
+    &.red {
+      border-color: @colorRed;
+
+      &.selected {
+        background: @colorRed;
+      }
     }
   }
 }
