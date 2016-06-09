@@ -1,2 +1,7 @@
-# ai-portfolio
-Aleks Iraguha Portfolio
+## Aleks Iraguha Portfolio
+
+
+### Local Development
+
+`npm install`
+`npm start`
