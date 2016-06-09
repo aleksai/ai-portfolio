@@ -1,0 +1,32 @@
+@import (reference) "colors";
+@borderColor: #CCC;
+.button-bar {
+  display: inline-block;
+  margin: 0  0 15px 0;
+
+  .button {
+    display: inline-block;
+    border: 1px solid @borderColor;
+    padding: 5px 15px;
+    border-right-width: 0;
+
+    &:hover {
+      background: @borderColor;
+      cursor: pointer;
+    }
+
+    &.selected {
+      background: @colorRed;
+      color: #FFF;
+    }
+
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+      border-right-width: 1px;
+    }
+  }
+}

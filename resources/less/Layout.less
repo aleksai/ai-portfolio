@@ -1,0 +1,36 @@
+@import "mediaQuery";
+@import "colors";
+#app {
+  font-size: 1.5em;
+}
+
+@leftPanelWidth: 220px;
+@desktopWidth: 1024px;
+
+.app-left-panel {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  padding: 20px 0 20px 20px;
+  width: @leftPanelWidth;
+  border-right: 1px solid lighten(@colorGrayDark, 5%);
+}
+
+.app-main {
+  position: absolute;
+  top: 0;
+  left: @leftPanelWidth;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  background: #FFF;
+  // background: fade(#FFF, 95%);
+  background: @colorGrayDark;
+  padding: 20px 30px;
+
+  @media @mobileAndTablet {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}
