@@ -1,0 +1,33 @@
+@import (reference) "colors";
+
+.themeSwitcher  {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  text-align: center;
+
+  .themeBtn {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    margin: 0 5px;
+    transition: 250ms ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &.blue {
+      background: @colorBlue;
+    }
+
+    &.white {
+      background: #FFF;
+    }
+  }
+}
+
+
+
