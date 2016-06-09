@@ -8,3 +8,7 @@
 .idea/vcs.xml
 
 node_modules/*
+
+.idea/jsLibraryMappings.xml
+
+.idea/misc.xml
