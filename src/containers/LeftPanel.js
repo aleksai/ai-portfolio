@@ -1,5 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { IndexLink, Link } from 'react-router';
+import { changeTheme } from '../redux/modules/theme';
+
 import ThemeSwitcher from './ThemeSwitcher';
 
 class LeftPanel extends React.Component {
@@ -18,10 +21,24 @@ class LeftPanel extends React.Component {
             <button className="btn btn-blue">Connect</button>
           </div>
 
-          <ThemeSwitcher />
+          <ThemeSwitcher {...this.props} onChange={this.props.changeTheme} />
       </div>
     )
   }
 }
 
-export default LeftPanel;
+const getProps = (state) => {
+  return {
+    theme: state.theme
+  }
+};
+
+const getActions = (dispatch) => {
+  return {
+    changeTheme: (theme) => {
+      dispatch(changeTheme(theme));
+    }
+  }
+};
+
+export default connect(getProps, getActions)(LeftPanel);

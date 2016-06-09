@@ -8,9 +8,27 @@ import configureSore from './src/redux/configureStore';
 let store = configureSore();
 
 class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { theme: props.theme };
+    this.onAppStateChange = this.onAppStateChange.bind(this);
+  }
+
+  componentDidMount() {
+    store.subscribe(this.onAppStateChange);
+  }
+
+  onAppStateChange() {
+    const appState = store.getState();
+    if (appState.theme.name !== this.state.theme) {
+      this.setState({ theme: appState.theme.name });
+    }
+  }
+
   render() {
     return (
-      <div>
+      <div className={`theme-${this.state.theme}`}>
         <LeftPanel />
         <div className="appMain">
           {this.props.children}
@@ -25,7 +43,7 @@ class AppContainer extends React.Component {
     return (
       <div>
         <Provider store={store}>
-          <App {...this.props} />
+          <App {...this.props} theme={store.getState().theme.name} />
         </Provider>
       </div>
     );

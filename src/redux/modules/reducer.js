@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
-import charts from './charts'
-import artist from './artist'
+import theme from './theme';
+
 export default combineReducers({
-  charts,
-  artist
+  theme
 });
