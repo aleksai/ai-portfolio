@@ -1,0 +1,44 @@
+@import (reference) "fontWeights";
+@import (reference) "colors";
+
+.skillList {
+  width: 60%;
+
+  .skill {
+    margin: 10px 0 0;
+  }
+
+  .bar {
+    position: relative;
+    height: 10px;
+    background: #333;
+
+    &:after {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      background: @colorBlue;
+    }
+
+    &.fill-0:after { width: 0%; }
+    &.fill-1:after { width: 10%; }
+    &.fill-2:after { width: 20%; }
+    &.fill-3:after { width: 30%; }
+    &.fill-4:after { width: 40%; }
+    &.fill-5:after { width: 50%; }
+    &.fill-6:after { width: 60%; }
+    &.fill-7:after { width: 70%; }
+    &.fill-8:after { width: 80%; }
+    &.fill-9:after { width: 90%; }
+    &.fill-10:after { width: 100%; }
+  }
+}
+
+//Themes
+
+.theme-red .skillList .skill .bar:after {
+  background: @colorRed;
+}

@@ -4,32 +4,28 @@ const PROJECTS = [
     title: 'Social Studio',
     company: 'Salesforce',
     technology: 'Javascript, Backbone JS, HTML/CSS',
-    imageUrl: '../../resources/images/social_studio.png',
-    url:'/projects/social-studio?modal=true'
+    imageUrl: '../../resources/images/social_studio.png'
   },
   {
     name: 'e-console',
     title: 'Log Harvester',
     company: 'Salesforce',
     technology: 'Adobe Flex, Javascript',
-    imageUrl: '../../resources/images/harvester.png',
-    url:'/projects/e-console?modal=true'
+    imageUrl: '../../resources/images/harvester.png'
   },
   {
     name: 'k3-music',
     title: 'Klevrly Music',
     company: 'Independent',
     technology: 'Javascript, React JS, HTML/CSS',
-    imageUrl: '../../resources/images/klevrly.png',
-    url:'/projects/k3-music?modal=true'
+    imageUrl: '../../resources/images/klevrly.png'
   },
   {
-    name: 'e-console',
+    name: 'ec',
     title: 'Engagement Console',
     company: 'Radian6',
     technology: 'Adobe Flex, Javascript',
-    imageUrl: '../../resources/images/ec.png',
-    url:'/projects/e-console?modal=true'
+    imageUrl: '../../resources/images/ec.png'
   }
 ];
 
