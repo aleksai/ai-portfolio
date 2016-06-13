@@ -1,30 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router';
 
-const PROJECTS = [
-  {
-    title: 'Social Studio',
-    company: 'Salesforce',
-    technology: 'Javascript, Backbone JS, HTML/CSS',
-    imageUrl: ''
-  },
-  {
-    title: 'K3 Music',
-    company: 'Independent',
-    technology: 'Javascript, React JS, HTML/CSS',
-    imageUrl: ''
-  },
-  {
-    title: 'Engagement Console',
-    company: 'Radian6',
-    technology: 'Adobe Flex, Javascript',
-    imageUrl: ''
-  }
-];
-
-
-const GalleryItem = (props) => {
+const GalleryItem = ({ data }) => {
   return (
-    <div className="galleryItem"></div>
+    <Link to={`/projects/${data.name}?modal=true`}>
+      <div className="galleryItem">
+        <img src={data.imageUrl}/>
+        <div className="title">{data.title}</div>
+        <div className="company">{data.company}</div>
+      </div>
+    </Link>
   );
 };
 
@@ -33,7 +18,7 @@ class ProjectsGallery extends React.Component{
     return (
       <div className="projectsGallery">
         {
-          PROJECTS.map((item, index) => {
+          this.props.projectList.map((item, index) => {
             return <GalleryItem key={index} data={item} />;
           })
         }

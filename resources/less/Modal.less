@@ -1,0 +1,48 @@
+@import (reference) "colors";
+
+.modal {
+  font-size: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: fade(#000, 60%);
+  transition: 500ms ease;
+  opacity: 0;
+
+  &.isActive {
+    opacity: 1;
+    .modalContent {
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .modalContent {
+    margin: 80px auto 0;
+    position: relative;
+    width: 700px;
+    height: 400px;
+    background: fade(#444, 70%);
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 17px 4px rgba(0,0,0,0.20);
+    transition: 500ms ease;
+    transform: scale(0.8) translateY(-200px);
+
+    .btnClose {
+      position: absolute;
+      top:-20px;
+      right: -20px;
+      border-radius: 20px;
+      width: 40px;
+      height: 40px;
+      transition: 250ms ease;
+
+      &:hover {
+        opacity: 0.6;
+        transform: scale(1.1);
+      }
+    }
+  }
+}

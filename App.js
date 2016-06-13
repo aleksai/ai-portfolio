@@ -1,6 +1,7 @@
 import React from 'react';
 import AppStyles from './resources/less/App.less';
 import LeftPanel from './src/containers/LeftPanel';
+import Modal from './src/components/Modal';
 
 import { Provider } from 'react-redux';
 import configureSore from './src/redux/configureStore';
@@ -19,6 +20,18 @@ class App extends React.Component {
     store.subscribe(this.onAppStateChange);
   }
 
+  componentWillReceiveProps(nextProps) {
+    const nextIsModal = this.isModalRoute(nextProps);
+    const routeTypeChanged = this.isModalRoute(this.props) !== nextIsModal;
+    this.previousChildren = nextIsModal && routeTypeChanged ? this.props.children : this.previousChildren;
+  }
+
+  isModalRoute(props) {
+    const { location } = props;
+    const { query } = location;
+    return Boolean(query && query.modal);
+  }
+
   onAppStateChange() {
     const appState = store.getState();
     if (appState.theme.name !== this.state.theme) {
@@ -27,11 +40,14 @@ class App extends React.Component {
   }
 
   render() {
+    const isModal = this.isModalRoute(this.props);
+    const modalView = isModal ? (<Modal {...this.props} >{this.props.children}</Modal>) : undefined;
     return (
       <div className={`theme-${this.state.theme}`}>
         <LeftPanel />
         <div className="appMain">
-          {this.props.children}
+          {isModal ? this.previousChildren : this.props.children}
+          {modalView}
         </div>
       </div>
     );
